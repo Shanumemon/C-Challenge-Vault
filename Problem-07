@@ -1,4 +1,4 @@
-//Count the total number of negative elements in an array.
+//Copy all elements from an array to another array.
 #include <stdio.h>
 int main()
 {
