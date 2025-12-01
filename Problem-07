@@ -1,0 +1,24 @@
+//Count the total number of negative elements in an array.
+#include <stdio.h>
+int main()
+{
+    int n, i;
+    printf("Enter number of elements in array:\n");
+    scanf("%d",&n);
+    int arr[n], copy[n];
+    printf("Enter elements of array:\n");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0; i<n; i++)
+    {
+        copy[i] = arr[i];
+    }
+    printf("Copied array:\n");
+    for(i=0; i<n; i++)
+    {
+        printf("%d ",copy[i]);
+    }
+    return 0;
+}
