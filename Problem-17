@@ -1,0 +1,53 @@
+//Sort even and odd elements of the array separately.
+#include <stdio.h>
+
+void sort(int arr[], int n);
+
+void sort(int arr[], int n)
+{
+    int temp, i, j;
+    for(i=0; i<n-1; i++)
+    {
+        for(j=0; j<n-1-i; j++)
+        {
+            if(arr[j+1]<arr[j])
+            {
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    for(i=0; i<n; i++)
+    {
+        printf("%d ",arr[i]);
+    }
+}
+int main()
+{
+    int i, n, e=0, o=0;
+    printf("Enter number of elements in array:\n");
+    scanf("%d",&n);
+    int arr[n], even[n], odd[n];
+    printf("Enter elements of array:\n");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0; i<n; i++)
+    {
+        if(arr[i] % 2 == 0)
+        {
+            even[e++] = arr[i];
+        }
+        else
+        {
+            odd[o++] = arr[i];
+        }
+    }
+    printf("Sorted array of even elements:\n");
+    sort(even, e);
+    printf("\nSorted array of odd elements:\n");
+    sort(odd, o);
+    return 0;
+}
