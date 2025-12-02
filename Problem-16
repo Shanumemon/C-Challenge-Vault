@@ -1,0 +1,76 @@
+//Sort array elements in ascending or descending order according to user input(Using Bubble Sort)
+#include <stdio.h>
+void sort_ascending(int arr[], int n);
+
+void sort_descending(int arr[], int n);
+
+void sort_ascending(int arr[], int n)
+{
+    int temp, i, j;
+    for(i=0; i<n-1; i++)
+    {
+        for(j=0; j<n-1-i; j++)
+        {
+            if(arr[j+1]<arr[j])
+            {
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    printf("Sorted array in ascending order is:\n");
+    for(i=0; i<n; i++)
+    {
+        printf("%d ",arr[i]);
+    }
+}
+
+void sort_descending(int arr[], int n)
+{
+    int temp, i, j;
+    for(i=0; i<n-1; i++)
+    {
+        for(j=0; j<n-1-i; j++)
+        {
+            if(arr[j+1]>arr[j])
+            {
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    printf("Sorted array in descending order is:\n");
+    for(i=0; i<n; i++)
+    {
+        printf("%d ",arr[i]);
+    }
+}
+int main()
+{
+    int i, n, order;
+    printf("Enter number of elements in array:\n");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter elements of array:\n");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("In which order do you want to sort array\n Press:\n1.Ascending\n2.Descending\n");
+    scanf("%d",&order);
+    switch(order)
+    {
+        case 1: 
+            sort_ascending(arr, n);
+            break;
+        case 2:
+            sort_descending(arr, n);
+            break;
+        default :
+            printf("Invalid input\n");
+            break;
+    }
+    return 0;
+}
