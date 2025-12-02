@@ -1,0 +1,37 @@
+//Put even and odd elements of an array in two separate arrays.
+#include <stdio.h>
+
+int main()
+{
+    int i, n, e=0, o=0;
+    printf("Enter number of elements in array:\n");
+    scanf("%d",&n);
+    int arr[n], even[50], odd[50];
+    printf("Enter elements of array:\n");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0; i<n; i++)
+    {
+        if(arr[i] % 2 == 0)
+        {
+            even[e++] = arr[i];
+        }
+        else 
+        {
+            odd[o++] = arr[i];
+        }
+    }
+    printf("Even array:\n");
+    for(i=0; i<e; i++)
+    {
+        printf("%d ",even[i]);
+    }
+    printf("\nOdd array:\n");
+    for(i=0; i<o; i++)
+    {
+        printf("%d ",odd[i]);
+    }
+    return 0;
+}
