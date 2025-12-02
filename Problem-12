@@ -1,0 +1,38 @@
+//Merge two arrays to the third array.
+#include <stdio.h>
+
+int main()
+{
+    int n, m, i, j=0;
+    printf("Enter size of array-1 and array-2:\n");
+    scanf("%d %d",&n,&m);
+    int arr1[n], arr2[m], arr[n+m];
+    printf("Enter elements of array-1:\n");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&arr1[i]);
+    }
+    printf("Enter elements of array-2:\n");
+    for(i=0; i<m; i++)
+    {
+        scanf("%d",&arr2[i]);
+    }
+    for(i=0; i<(m+n); i++)
+    {
+        if(i<n)
+        {
+            arr[i] = arr1[i];
+        }
+        else
+        {
+            arr[i] = arr2[j];
+            j++;
+        }
+    }
+    printf("Array after merging array-1 and array-2:\n");
+    for(i=0; i<(m+n); i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    return 0;
+}
