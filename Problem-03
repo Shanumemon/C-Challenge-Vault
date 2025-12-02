@@ -1,0 +1,30 @@
+//Perform scalar matrix multiplication.
+#include <stdio.h>
+
+int main()
+{
+    int i, j, r, c, num;
+    printf("Enter number of rows and column of matrix:\n");
+    scanf("%d %d",&r,&c);
+    int m[r][c];
+    printf("Enter elements of matrix\n");
+    for(i=0; i<r; i++)
+    {
+        for(j=0; j<c; j++)
+        {
+            scanf("%d",&m[i][j]); 
+        }
+    }
+    printf("Enter scalar to multiply with matrix:\n");
+    scanf("%d",&num);
+    printf("Matrix after multiplication with %d\n",num);
+    for(i=0; i<r; i++)
+    {
+        for(j=0; j<c; j++)
+        {
+            printf("%d  ",m[i][j]*num);
+        }
+        printf("\n");
+    }
+    return 0;
+}
