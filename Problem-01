@@ -1,0 +1,19 @@
+/*Calculate the area and perimeter of a circle using a function using call by
+reference. Input radius in main ().*/
+#include <stdio.h>
+void circle(float r, float *area, float *perimeter)
+{
+    *area = 3.14*r*r;
+    *perimeter = 2*3.14*r;
+}
+
+int main()
+{
+    float r, area, perimeter;
+    printf("Enter radius:\n");
+    scanf("%f",&r);
+    circle(r, &area, &perimeter);
+    printf("Area of given circle is %.3f\n",area);
+    printf("Perimeter of given circle is %.3f\n",perimeter);
+    return 0;
+}
