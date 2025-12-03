@@ -1,0 +1,41 @@
+//Binary Search 1-D array(Sorted array)
+#include <stdio.h>
+int main()
+{
+    int i, max, min, mid, n, search, found=0;
+    printf("Enter number of elements in array:\n");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter elements of array(Sorted):\n");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    min = 0;
+    max = n-1;
+    printf("Enter element to search in array:\n");
+    scanf("%d",&search);
+    while(min <= max)
+    {
+        mid = min + (max - min)/2; // (min+max)/2 is alao allowed but not prefered as its not forlage values
+        if(arr[mid] == search)
+        {
+            printf("%d is found in array at index %d\n",search, mid);
+            found = 1;
+            break;
+        }
+        else if(arr[mid] > search)
+        {
+            max = mid-1;
+        }
+        else
+        {
+            min = mid+1;
+        }
+    }
+    if(found == 0)
+    {
+        printf("%d is not present in given array\n",search);
+    }
+    return 0;
+}   
