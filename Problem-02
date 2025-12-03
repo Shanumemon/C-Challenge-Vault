@@ -1,0 +1,33 @@
+/*Write a function that receives 5 integers and returns the sum, average and standard deviation of these numbers. Call the function from main () and print the results in main ().*/
+#include <stdio.h>
+#include <math.h>
+void arithmetic(int arr[], int n, int *sum, float *avg, float *sd)
+{
+    int i;
+    float sq_sum = 0;
+    *sum = 0;
+    for(i=0; i<n; i++)
+    {
+        *sum += arr[i];
+    }
+    *avg = (*sum)/n;
+    for(i=0; i<n; i++)
+    {
+        sq_sum += arr[i]*arr[i];
+    }
+    *sd = sqrt(sq_sum/n - ((*avg)*(*avg)));
+}
+
+int main()
+{
+    int n=5, arr[5], sum, i;
+    float avg, sd;
+    printf("Enter 5 integers:\n");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    arithmetic(arr, n, &sum, &avg, &sd);
+    printf("Sum = %d\nAverage = %.3f\nStandard Deviation = %.3f",sum,avg,sd);
+    return 0;
+}
