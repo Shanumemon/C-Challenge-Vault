@@ -1,0 +1,19 @@
+/*Write a function to obtain square of a floating-point number.*/
+#include <stdio.h>
+
+float square(float num)
+{
+    float sq;
+    sq = num*num;
+    return sq;
+}
+
+int main()
+{
+    float num, sq;
+    printf("Enter a number:\n");
+    scanf("%f",&num);
+    sq = square(num);
+    printf("%.3f square is %.3f",num,sq);
+    return 0;
+}
