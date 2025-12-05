@@ -1,0 +1,37 @@
+/*Write a program to find if a square matrix is symmetric*/
+#include <stdio.h>
+
+int main()
+{
+    int i, j, r, c;
+    printf("Enter number of rows and column of matrix:\n");
+    scanf("%d %d",&r,&c);
+    int m[r][c];
+    if(r != c)
+    {
+        printf("Invalid input\n");
+        return 0;
+    }
+    printf("Enter elements of matrix\n");
+    for(i=0; i<r; i++)
+    {
+        for(j=0; j<c; j++)
+        {
+            scanf("%d",&m[i][j]); 
+        }
+    }
+    for(i=0; i<r; i++)
+    {
+        for(j=i+1; j<c; j++)
+        {
+            if(m[i][j] != m[j][i])
+            {
+                printf("Given matrix is not a symmetric matrix\n");
+                return 0;
+            }
+        }
+    }
+    printf("Given matrix is a symmetric matrix\n");
+    return 0;
+}
+    
