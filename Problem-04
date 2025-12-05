@@ -1,0 +1,24 @@
+//Calculate factorial of a number without using '*' operator
+#include <stdio.h>
+int main()
+{
+    int i, j, num, fact=1, sum=0;
+    printf("Enter number:\n");
+    scanf("%d",&num);
+    if(num<0)
+    {
+        printf("Invalid input\n");
+        return 0;
+    }
+    for(i=2; i<=num; i++)
+    {
+        for(j=1; j<=i; j++)
+        {
+            sum = sum + fact;
+        }
+        fact = sum;
+        sum = 0;
+    }
+    printf("%d! is %d",num, fact);
+    return 0;
+}

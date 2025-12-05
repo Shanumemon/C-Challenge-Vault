@@ -1,0 +1,26 @@
+//Find GCD of two numbers using for loop
+#include <stdio.h>
+
+int main() 
+{
+    int i, num1, num2, min, gcd;
+    printf("Enter two numbers:\n");
+    scanf("%d %d",&num1,&num2);
+    if(num1 > num2)
+    {
+        min = num2;
+    }
+    else
+    {
+        min = num1;
+    }
+    for(i=1; i<=min; i++)
+    {
+        if((num1 % i == 0) && (num2 % i == 0))
+        {
+            gcd = i;
+        }
+    }
+    printf("GCD(%d, %d) = %d",num1,num2,gcd);
+    return 0;
+}
