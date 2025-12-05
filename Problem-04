@@ -1,0 +1,21 @@
+/*Write a function power (a, b) to calculate the value of a raised to b.*/
+#include <stdio.h>
+
+int power(int a, int b)
+{
+    int p=1,i;
+    for(i=1; i<=b; i++)
+    {
+        p = p * a;
+    }
+    return p;
+}
+int main()
+{
+    int a,b,p;
+    printf("Enter two intergers:\n");
+    scanf("%d %d",&a,&b);
+    p = power(a, b);
+    printf("%d raised to %d is %d",a,b,p);
+    return 0;
+}
