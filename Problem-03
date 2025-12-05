@@ -1,0 +1,41 @@
+/*Write a function to calculate the factorial value of any integer and
+then find sum of digits of factorial using another function where
+integer is entered through the keyboard.*/
+#include <stdio.h>
+
+int factorial(int num)
+{
+    int i, fact=1;
+    for(i=1; i<=num; i++)
+    {
+        fact = fact*i;
+    }
+    return fact;
+}
+
+int sum_digit(int fact)
+{
+    int digit, sum=0;
+    while(fact != 0)
+    {
+        digit = fact % 10;
+        sum += digit;
+        fact = fact/10;
+    }
+    return sum;
+}
+int main()
+{
+    int num, fact, sum;
+    printf("Enter a number:\n");
+    scanf("%d",&num);
+    if(num < 0)
+    {
+        printf("Invalid input\n");
+        return 0;
+    }
+    fact = factorial(num);
+    sum = sum_digit(fact);
+    printf("Factorial of %d is %d\nSum of digits of %d is %d",num,fact,fact,sum);
+    return 0;
+}
