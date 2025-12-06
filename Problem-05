@@ -1,0 +1,38 @@
+/*Implement a program that toggles case of each character in a string:
+◦ Uppercase → lowercase
+◦ Lowercase → uppercase*/
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()
+{
+    int i=0,len;
+    char s[50];
+    printf("Enter string:\n");
+    fgets(s, sizeof(s), stdin);
+    len = strlen(s);
+    if(s[len-1] == '\n')
+    {
+        s[len-1] = '\0';
+        len--;
+    }
+    while(s[i] != '\0')
+    {
+        if(isalpha(s[i]))
+        {
+            if(islower(s[i]))
+            {
+                s[i] = toupper(s[i]);
+            }
+            else
+            {
+                s[i] = tolower(s[i]);
+            }
+        }
+        i++;
+    }
+    puts(s);
+    return 0;
+}
