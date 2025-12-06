@@ -1,0 +1,42 @@
+/*Given a string, print the frequency of all characters (case-sensitive).*/
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int i=0,j,k,len,count=1,freq[50];
+    char s[50];
+    printf("Enter string:\n");
+    fgets(s, sizeof(s), stdin);
+    len = strlen(s);
+    if(s[len-1] == '\n')
+    {
+        s[len-1] = '\0';
+        len--;
+    }
+    while(s[i] != '\0')
+    {
+        for(j=i+1; j<len; j++)
+        {
+            if(s[i] == s[j])
+            {
+                for(k=j; k<len-1; k++)
+                {
+                    s[k] = s[k+1];
+                }
+                j--;
+                len--;
+                count++;
+            }
+        }
+        freq[i] = count;
+        count = 1;
+        i++;
+    }
+    for(i=0; i<len; i++)
+    {
+        printf("Frequency of %c is %d\n",s[i],freq[i]);
+    }
+    return 0;
+}
