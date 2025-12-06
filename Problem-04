@@ -1,0 +1,46 @@
+/*Given a string, count:
+1. Number of vowels
+2. Number of consonants
+3. Number of other characters (digits, spaces, symbols)*/
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()
+{
+    int i=0, len, vowel=0, consonants=0, other=0;
+    char s[50], c;
+    printf("Enter string:\n");
+    fgets(s, sizeof(s), stdin);
+    len = strlen(s);
+    if(s[len-1] == '\n')
+    {
+        s[len-1] = '\0';
+        len--;
+    }
+    while(s[i] != '\0')
+    {
+        if(isalpha(s[i]))
+        {
+            c = tolower(s[i]);
+            if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+            {
+                vowel++;
+            }
+            else
+            {
+                consonants++;
+            }
+        }
+        else
+        {
+            other++;
+        }
+        i++;
+    }
+    printf("Total number of vowels is %d\n",vowel);
+    printf("Total number of consonants is %d\n",consonants);
+    printf("Total number of other characters (digits, spaces, symbols) is %d\n",other);
+    return 0;
+}
