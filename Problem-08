@@ -1,0 +1,39 @@
+/*Remove duplicate characters from a string while maintaining the original order*/
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    int i = 0, j, k, len;
+    char s[50];
+
+    printf("Enter string:\n");
+    fgets(s, sizeof(s), stdin);
+
+    len = strlen(s);
+    if (s[len - 1] == '\n') {
+        s[len - 1] = '\0';
+        len--;
+    }
+
+    while (s[i] != '\0')
+    {
+        for (j = i + 1; j < len; j++)
+        {
+            if (s[i] == s[j])
+            {
+                for (k = j; k < len - 1; k++)
+                    s[k] = s[k + 1]; 
+
+                j--;   
+                len--;
+                s[len] = '\0';
+            }
+        }
+        i++;
+    }
+
+    puts(s);
+    return 0;
+}
