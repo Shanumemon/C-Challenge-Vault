@@ -1,0 +1,33 @@
+/*Remove numeric characters (0–9) from a given string.*/
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()
+{
+    int i=0, j, len;
+    char s[50];
+    printf("Enter string:\n");
+    fgets(s, sizeof(s), stdin);
+    len = strlen(s);
+    if(s[len-1] == '\n')
+    {
+        s[len-1] = '\0';
+        len--;
+    }
+    while(s[i] != '\0')
+    {
+        if(isdigit(s[i]))
+        {
+            for(j=i; j<len; j++)
+            {
+                s[j] = s[j+1];
+            }
+            len--;
+            continue;
+        }
+        i++;
+    }
+    puts(s);
+    return 0;
+}
