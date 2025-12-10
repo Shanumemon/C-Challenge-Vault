@@ -1,0 +1,33 @@
+/*Write a function long factorial(int n) that returns the factorial of n.*/
+
+#include <stdio.h>
+
+long factorial(int n)
+{
+    long fact=1;
+    int i;
+    for(i=1; i<=n; i++)
+    {
+        fact = fact*i;
+    }
+    return (fact);
+}
+
+int main()
+{
+    int n;
+    long fact;
+    printf("Enter a positive integer:\n");
+    scanf("%d",&n);
+    if(n<0)
+    {
+        printf("Invalid input\n");
+    }
+    else
+    {
+        fact = factorial(n);
+        printf("%d factorial is %ld",n,fact);
+    }
+    return 0;
+}
+
