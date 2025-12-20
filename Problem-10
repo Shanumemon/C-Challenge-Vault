@@ -1,0 +1,20 @@
+//Find diameter, circumference and area of a circle using functions.
+#include <stdio.h>
+
+void circle(int r, float *d, float *c, float *a)
+{
+    *d = 2.0*r;
+    *c = 2*r*3.14;
+    *a = 3.14*r*r;
+}
+
+int main()
+{
+    int r;
+    float d,c,a;
+    printf("Enter radius:\n");
+    scanf("%d",&r);
+    circle(r, &d, &c, &a);
+    printf("Diameter = %.3f\nCircumference = %.3f\nArea = %.3f",d,c,a);
+    return 0;
+}
